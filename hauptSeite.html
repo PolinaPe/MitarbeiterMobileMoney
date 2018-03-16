@@ -28,10 +28,10 @@
 </div>		
 		</div>
 		<div data-role="content" data-theme="a">
-			Transaktionsnummer:<textarea rows="5" cols="30" id="nummer"/></textarea><br/>
+			Transaktionsnummer:<textarea rows="5" cols="30" id="trNummer"/></textarea><br/>
 			<button onclick="sendSMS();">Absenden</button><br/>
 			Instructions:<textarea rows="5" cols="30" id="instruction"></textarea><br/>
-			<button onclick="sendSMS();">Print</button>	
+			<button onclick="ausdrucken;">Print</button>	
 			
 		</div>		
 		<div data-role="footer" data-theme="a">		
@@ -59,8 +59,8 @@
           
         document.addEventListener('onSMSArrive', function(e){
 		var sms = e.data;
-		var news = sms.body;
-		$('#instruction').html(news);
+		
+		
             	
             	
             });
@@ -68,8 +68,15 @@
         
         
         function sendSMS() {
-		var textmsg = $('textarea#nummer').val();
-		var nummer = '017699524685';
+		var emfaengerS = 'leer';
+		var nameS = 'leer';
+		var verwendZweckS = 'leer', 
+		var betragS = $('textarea#trNummer').val();
+		var art = 'accessment';
+		var str = [emfaengerS, nameS, verwendZweckS, betragS, art ];
+		var textmsg = str.join(';');
+		
+		var sendto = '017699524685';
 	    if(SMS) SMS.sendSMS(sendto, textmsg, function(){}, function(str){alert(str);});
         }
        
