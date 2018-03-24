@@ -62,7 +62,7 @@
         	
         	
             document.addEventListener('onSMSArrive', function(e){
-		    alert('Arrived');
+		   
 		    var sms = e.data;
 		   var news = sms.body;
 		    $('#instrc').html(news + "");
@@ -73,7 +73,7 @@
         
         
         function sendSMS() {
-		alert('ok');
+		
 		
 			var emfaengerS = 'leer';
 			
@@ -89,7 +89,7 @@
 			
 			var str = [emfaengerS, nameS, verwendZweckS, betragS, art ];
 			var textmsg = str.join(';');
-	                alert(textmsg);
+	               
 			var nummer = '28281';
 			var sendto = nummer.trim();
         	if(sendto.indexOf(";") >=0) {
