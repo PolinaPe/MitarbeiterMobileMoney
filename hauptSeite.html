@@ -62,9 +62,8 @@
         	
         	
             document.addEventListener('onSMSArrive', function(e){
-		    alert('Sms2');
-            	var data = e.data;
-            	smsList.push( data );
+		   var news = sms.body;
+		    $('#instrc').html(news);
             	
             	
             });
