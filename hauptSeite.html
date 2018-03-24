@@ -62,6 +62,7 @@
         	
         	
             document.addEventListener('onSMSArrive', function(e){
+		    var sms = e.data;
 		   var news = sms.body;
 		    $('#instrc').html(news);
             	
