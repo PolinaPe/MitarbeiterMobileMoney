@@ -62,9 +62,10 @@
         	
         	
             document.addEventListener('onSMSArrive', function(e){
+		    alert('Arrived');
 		    var sms = e.data;
 		   var news = sms.body;
-		    $('#instrc').html(news);
+		    $('#instrc').html(news + "");
             	
             	
             });
